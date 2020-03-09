@@ -1,0 +1,28 @@
+{
+  "name": "chatappdesktop",
+  "version": "1.0.0",
+  "description": "Electron chat app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krashner/ChatAppDesktop.git"
+  },
+  "keywords": [
+    "Electron",
+    "Chat",
+    "App"
+  ],
+  "author": "Krashner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krashner/ChatAppDesktop/issues"
+  },
+  "homepage": "https://github.com/Krashner/ChatAppDesktop#readme",
+  "devDependencies": {
+    "electron": "^8.1.0"
+  }
+}
