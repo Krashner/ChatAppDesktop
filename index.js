@@ -13,15 +13,23 @@ function createWindow() {
 
     // and load the index of the app.
     //to do, use actual address
-    win.loadURL('http://localhost:3000')
+    win.loadURL('https://capchat.app')
 
     //remove the menu bar
     win.removeMenu()
-    
+
     //display window when it's finished loading
     win.once('ready-to-show', () => {
         win.show()
     })
+
+    //window is closed, empty reference
+    win.on("closed", () => { win = null; });
 }
 
-app.whenReady().then(createWindow)
+//Electron has finished its initialization and can start creating windows.
+app.on("ready", createWindow);
+//reactivate window
+app.on("activate", () => win === null && createWindow());
+//action for when window is closed
+app.on("window-all-closed", () => process.platform !== "darwin" && app.quit());

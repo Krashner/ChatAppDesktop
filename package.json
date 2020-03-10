@@ -1,28 +1,56 @@
 {
   "name": "chatappdesktop",
+  "productName": "chatappdesktop",
   "version": "1.0.0",
-  "description": "Electron chat app",
+  "description": "Simple Electron chat app",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Krashner/ChatAppDesktop.git"
   },
-  "keywords": [
-    "Electron",
-    "Chat",
-    "App"
-  ],
-  "author": "Krashner",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Krashner/ChatAppDesktop/issues"
   },
+  "keywords": [],
+  "author": {
+    "name": "Krashner",
+    "email": "jbuttrey@oddrealms.com"
+  },
   "homepage": "https://github.com/Krashner/ChatAppDesktop#readme",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "maintainer": "Krashner",
+              "homepage": "https://github.com/Krashner/ChatAppDesktop#readme"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "dev-dependencies": "^1.0.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
   "devDependencies": {
-    "electron": "^8.1.0"
+    "@electron-forge/cli": "^6.0.0-beta.50",
+    "@electron-forge/maker-deb": "^6.0.0-beta.50",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.50",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.50",
+    "@electron-forge/maker-zip": "^6.0.0-beta.50",
+    "electron": "8.1.0"
   }
 }
